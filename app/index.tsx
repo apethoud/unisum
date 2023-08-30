@@ -1,10 +1,16 @@
 import { useCallback } from "react";
-import { Text, View } from "react-native";
+import Text from "../reusable-components/Text";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { View } from "react-native";
 
 export default function Home() {
   return (
-    <Text style={{ fontFamily: "SourceCodeProRegular" }}>Unisum</Text>
+    <>
+      <Text large>Unisum</Text>
+      <View className="w-1/2 flex items-center">
+        <Text centered>a number puzzle game by Andrew Pethoud</Text>
+      </View>
+    </>
   )
 }
