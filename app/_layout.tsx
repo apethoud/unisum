@@ -26,7 +26,9 @@ export default function () {
     <SafeAreaView
       className="flex-1 justify-center items-center"
       onLayout={onLayoutRootView}>
-      <Slot />
+      <View className="flex-1 justify-center items-center w-full px-4">
+        <Slot />
+      </View>
     </SafeAreaView>
   );
 }
