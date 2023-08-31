@@ -18,7 +18,7 @@ export default function MenuCard({ title, subhead, color }: MenuCardPropTypes) {
       : "border-slate-900 bg-slate-200"
     }`}>
       <Text bold>{title}</Text>
-      <Text>{subhead}</Text>
+      <Text small>{subhead}</Text>
     </View>
   )
 }
