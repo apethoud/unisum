@@ -7,6 +7,7 @@ export default function Text({
   italic,
   small,
   large,
+  huge,
   centered,
 }: {
   children: ReactNode,
@@ -14,12 +15,14 @@ export default function Text({
   italic?: boolean,
   small?: boolean,
   large?: boolean,
+  huge?: boolean,
   centered?: boolean,
 }) {
   return (
     <RNText
       className={`
-        ${large ? "text-4xl"
+        ${huge ? "text-5xl"
+          : large ? "text-4xl"
           : small ? "text-base"
           : "text-lg"
 }
