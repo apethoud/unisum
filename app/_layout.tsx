@@ -10,6 +10,7 @@ export default function () {
   const [fontsLoaded] = useFonts({
     'SourceCodeProRegular': require('../assets/fonts/SourceCodePro-Regular.ttf'),
     'SourceCodeProBold': require('../assets/fonts/SourceCodePro-Bold.ttf'),
+    'SourceCodeProItalic': require('../assets/fonts/SourceCodePro-Italic.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {

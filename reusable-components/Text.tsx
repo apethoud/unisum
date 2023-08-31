@@ -3,10 +3,14 @@ import { Text as RNText } from "react-native";
 
 export default function Text({
   children,
+  bold,
+  italic,
   large,
   centered,
 }: {
   children: ReactNode,
+  bold?: boolean,
+  italic?: boolean,
   large?: boolean,
   centered?: boolean,
 }) {
@@ -16,7 +20,7 @@ export default function Text({
         ${large ? "text-4xl" : "text-base"}
         ${centered ? "text-center" : "text-left"}
       `}
-      style={{ fontFamily: "SourceCodeProRegular" }}>
+      style={{ fontFamily: bold ? "SourceCodeProBold" : italic ? "SourceCodeProItalic" : "SourceCodeProRegular" }}>
       {children}
     </RNText>
   )

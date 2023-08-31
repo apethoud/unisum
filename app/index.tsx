@@ -37,7 +37,7 @@ export default function Home() {
     <>
       <Text large>Unisum</Text>
       <View className="w-full flex items-center mb-6">
-        <Text centered>{`a number puzzle game\nby Andrew Pethoud`}</Text>
+        <Text italic centered>{`a number puzzle game\nby Andrew Pethoud`}</Text>
       </View>
       {levelPacks.map(pack => (
         <MenuCard

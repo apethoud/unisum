@@ -17,7 +17,7 @@ export default function MenuCard({ title, subhead, color }: MenuCardPropTypes) {
       : color === "azalea" ? "border-azalea-900 bg-azalea-200"
       : "border-slate-900 bg-slate-200"
     }`}>
-      <Text>{title}</Text>
+      <Text bold>{title}</Text>
       <Text>{subhead}</Text>
     </View>
   )
