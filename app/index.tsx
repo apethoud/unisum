@@ -10,21 +10,25 @@ const levelPacks = [
     id: 1,
     name: "Beginner",
     levels: 25,
+    color: "ocean",
   },
   {
     id: 2,
     name: "Intermediate",
     levels: 25,
+    color: "lavender",
   },
   {
     id: 3,
     name: "Advanced",
     levels: 25,
+    color: "orchid",
   },
   {
     id: 4,
     name: "Expert",
     levels: 25,
+    color: "azalea",
   },
 ]
 
@@ -36,7 +40,11 @@ export default function Home() {
         <Text centered>{`a number puzzle game\nby Andrew Pethoud`}</Text>
       </View>
       {levelPacks.map(pack => (
-        <MenuCard title={pack.name} subhead={`0 / ${pack.levels} Completed`} key={pack.id} />
+        <MenuCard
+          title={pack.name}
+          subhead={`0 / ${pack.levels} Completed`}
+          color={pack.color}
+          key={pack.id} />
       ))}
     </>
   )
