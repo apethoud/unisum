@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { View } from "react-native";
 import MenuCard from "../reusable-components/MenuCard";
+import { useRouter } from "expo-router";
 
 const levelPacks = [
   {
@@ -33,6 +34,11 @@ const levelPacks = [
 ]
 
 export default function Home() {
+  const navigation = useRouter()
+  
+  const navigateToLevel = () => {
+    navigation.push('level-view')
+  }
   return (
     <>
       <Text large>Unisum</Text>
@@ -44,6 +50,7 @@ export default function Home() {
           title={pack.name}
           subhead={`0 / ${pack.levels} Completed`}
           color={pack.color}
+          onPress={navigateToLevel}
           key={pack.id} />
       ))}
     </>
