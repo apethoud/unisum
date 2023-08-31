@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <Text large>Unisum</Text>
-      <View className="w-full flex items-center">
+      <View className="w-full flex items-center mb-6">
         <Text centered>{`a number puzzle game\nby Andrew Pethoud`}</Text>
       </View>
       {levelPacks.map(pack => (
