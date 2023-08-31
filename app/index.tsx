@@ -41,7 +41,7 @@ export default function Home() {
   }
   return (
     <>
-      <Text large>Unisum</Text>
+      <Text huge>Unisum</Text>
       <View className="w-full flex items-center mb-6">
         <Text small italic centered>{`a number puzzle game\nby Andrew Pethoud`}</Text>
       </View>
