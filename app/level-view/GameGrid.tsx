@@ -37,10 +37,21 @@ export default function GameGrid() {
     </View>
   )
 
+  const GridButtonRow = () => (
+    <View className="flex-row justify-end pt-2">
+      {levelData.gridLayout[0].map((column, index) => (
+        <GridButton key={index} />
+      ))}
+    </View>
+  )
+
   return (
-    <View className="flex-row">
-      <GridButtonColumn />
-      <Grid />
+    <View>
+      <View className="flex-row">
+        <GridButtonColumn />
+        <Grid />
+      </View>
+      <GridButtonRow />
     </View>
   )
 }
