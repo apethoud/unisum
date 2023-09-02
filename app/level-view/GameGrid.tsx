@@ -25,7 +25,7 @@ export default function GameGrid() {
 
   const GridButton = ({ rowOrColumn }: { rowOrColumn: "row" | "column" }) => (
     <View className="w-12 h-12 flex justify-center items-center p-1">
-      <View className="w-full h-full border rounded-lg border-slate-600 flex justify-center items-center">
+      <View className="w-full h-full bg-white border rounded-lg border-slate-600 flex justify-center items-center shadow-sm shadow-slate-300">
         {rowOrColumn === "row" ? (
           <ChevronRight />
         ) : (
