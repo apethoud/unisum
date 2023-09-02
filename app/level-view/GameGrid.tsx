@@ -2,9 +2,6 @@ import { View } from "react-native";
 import Text from "../../reusable-components/Text";
 import levelData from "../../api/exampleLevelData";
 
-const numberOfRows = 5
-const numberOfColumns = 5
-
 export default function GameGrid() {
   const Cell = ({ value }: { value: number }) => (
     <View className="w-12 h-12 flex justify-center items-center border border-slate-300">
@@ -14,8 +11,8 @@ export default function GameGrid() {
 
   const Grid = () => (
     <View className="border border-slate-300">
-      {levelData.gridLayout.map((row, i) => (
-        <View className="flex-row" key={i}>
+      {levelData.gridLayout.map((row, index) => (
+        <View className="flex-row" key={index}>
           {row.map(cell => (
             <Cell key={cell.id} value={cell.value} />
           ))}
@@ -23,8 +20,26 @@ export default function GameGrid() {
       ))}
     </View>
   )
+
+  const GridButton = () => (
+    <View className="w-12 h-12 flex justify-center items-center p-1">
+      <View className="w-full h-full border rounded-lg border-slate-600">
+
+      </View>
+    </View>
+  )
+
+  const GridButtonColumn = () => (
+    <View className="flex-col pr-2">
+      {levelData.gridLayout.map((row, index) => (
+        <GridButton key={index} />
+      ))}
+    </View>
+  )
+
   return (
-    <View>
+    <View className="flex-row">
+      <GridButtonColumn />
       <Grid />
     </View>
   )
