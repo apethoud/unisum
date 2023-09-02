@@ -3,6 +3,7 @@ import Text from "../../reusable-components/Text";
 import TargetNumber from "./TargetNumber";
 import GameGrid from "./GameGrid";
 import MathOptions from "./MathOptions";
+import GameOptions from "./GameOptions";
 
 export default function LevelView() {
   return (
@@ -11,6 +12,7 @@ export default function LevelView() {
       <TargetNumber number={15} />
       <GameGrid />
       <MathOptions />
+      <GameOptions />
     </View>
   )
 }
