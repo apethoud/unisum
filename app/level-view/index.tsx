@@ -2,6 +2,7 @@ import { View } from "react-native";
 import Text from "../../reusable-components/Text";
 import TargetNumber from "./TargetNumber";
 import GameGrid from "./GameGrid";
+import MathOptions from "./MathOptions";
 
 export default function LevelView() {
   return (
@@ -9,6 +10,7 @@ export default function LevelView() {
       <Text centered>{`Unisum\nAdvanced #4`}</Text>
       <TargetNumber number={15} />
       <GameGrid />
+      <MathOptions />
     </View>
   )
 }

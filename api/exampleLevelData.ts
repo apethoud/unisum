@@ -1,7 +1,30 @@
 const levelData = {
   id: 1,
+  level: 1,
   pack: "Beginner",
   targetNumber: 8,
+  mathOptions: [
+    {
+      id: 1,
+      value: -3,
+    },
+    {
+      id: 2,
+      value: 4,
+    },
+    {
+      id: 3,
+      value: 7,
+    },
+    {
+      id: 4,
+      value: -6,
+    },
+    {
+      id: 5,
+      value: 1,
+    }
+  ],
   gridLayout: [
     [
       {
