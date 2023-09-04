@@ -1,10 +1,9 @@
 import { View } from "react-native";
 import Text from "../../reusable-components/Text";
-import levelData from "../../api/exampleLevelData";
 import ChevronRight from "../../assets/icons/ChevronRight";
 import ChevronUp from "../../assets/icons/ChevronUp";
 
-export default function GameGrid() {
+export default function GameGrid({ gridData }) {
   const Cell = ({ value }: { value: number }) => (
     <View className="w-12 h-12 flex justify-center items-center border border-slate-300">
       <Text large>{value}</Text>
@@ -13,7 +12,7 @@ export default function GameGrid() {
 
   const Grid = () => (
     <View className="border border-slate-300">
-      {levelData.gridLayout.map((row, index) => (
+      {gridData.map((row, index) => (
         <View className="flex-row" key={index}>
           {row.map(cell => (
             <Cell key={cell.id} value={cell.value} />
@@ -37,7 +36,7 @@ export default function GameGrid() {
 
   const GridRowButtons = () => (
     <View className="flex-col pr-2">
-      {levelData.gridLayout.map((row, index) => (
+      {gridData.map((row, index) => (
         <GridButton rowOrColumn="row" key={index} />
       ))}
     </View>
@@ -45,7 +44,7 @@ export default function GameGrid() {
 
   const GridColumnButtons = () => (
     <View className="flex-row justify-end pt-2">
-      {levelData.gridLayout[0].map((column, index) => (
+      {gridData[0].map((column, index) => (
         <GridButton rowOrColumn="column" key={index} />
       ))}
     </View>
