@@ -15,7 +15,7 @@ export default function LevelView() {
       <Text centered>{`Unisum\n${gameState.pack} #${gameState.level}`}</Text>
       <TargetNumber number={gameState.targetNumber} />
       <GameGrid gridData={gameState.gridLayout} />
-      <MathOptions />
+      <MathOptions options={gameState.mathOptions} />
       <GameOptions />
     </View>
   )
