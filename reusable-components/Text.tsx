@@ -10,6 +10,7 @@ export default function Text({
   large,
   small,
   centered,
+  faded,
 }: {
   children: ReactNode,
   bold?: boolean,
@@ -19,6 +20,7 @@ export default function Text({
   large?: boolean,
   small?: boolean,
   centered?: boolean,
+  faded?: boolean,
 }) {
   return (
     <RNText
@@ -28,8 +30,9 @@ export default function Text({
           : large ? "text-2xl"
           : small ? "text-base"
           : "text-lg"
-}
+        }
         ${centered ? "text-center" : "text-left"}
+        ${faded ? "text-slate-300" : "text-black"}
       `}
       style={{ fontFamily: bold ? "SourceCodeProBold" : italic ? "SourceCodeProItalic" : "SourceCodeProRegular" }}>
       {children}

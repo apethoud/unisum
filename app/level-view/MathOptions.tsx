@@ -2,7 +2,7 @@ import { Pressable, View } from "react-native";
 import Text from "../../reusable-components/Text";
 
 export default function MathOptions({ gameState, setGameState }) {
-  const applyMathOperation = (operation) => {
+  const applyMathOperation = (optionId, operation) => {
     let tempGameState = { ...gameState }
 
     for (let row of tempGameState.gridLayout) {
@@ -16,14 +16,24 @@ export default function MathOptions({ gameState, setGameState }) {
       }
     }
 
+    for (let mathOption of tempGameState.mathOptions) {
+      if (mathOption.id === optionId) {
+        mathOption.available = false
+      }
+    }
+
     setGameState(tempGameState)
   }
 
-  const Option = ({ value }: { value: number }) => (
+  const Option = ({ id, value, isAvailable }: { id: number, value: number, isAvailable: boolean }) => (
     <Pressable
-      onPress={() => applyMathOperation(value)}>
-      <View className="m-2 py-1 px-2 bg-white border rounded-lg border-slate-400 flex justify-center items-center shadow-sm shadow-slate-300">
-        <Text large>{value > 0 ? `+${value}` : value}</Text>
+      onPress={() => applyMathOperation(id, value)}>
+      <View className={`m-2 py-1 px-2 rounded-lg flex justify-center items-center 
+        ${isAvailable
+          ? "bg-lavender-200 border border-lavender-400 shadow-sm shadow-slate-300"
+          : "bg-white border border-slate-200"
+        }`}>
+        <Text large faded={!isAvailable}>{value > 0 ? `+${value}` : value}</Text>
       </View>
     </Pressable>
   )
@@ -31,7 +41,7 @@ export default function MathOptions({ gameState, setGameState }) {
   return (
     <View className="w-80 mt-6 p-2 border border-slate-200 flex-row flex-wrap justify-between">
       {gameState.mathOptions.map(option => (
-        <Option value={option.value} key={option.id} />
+        <Option key={option.id} id={option.id} value={option.value} isAvailable={option.available} />
       ))}
     </View>
   )
