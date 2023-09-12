@@ -18,7 +18,10 @@ export default function LevelView() {
         gameState={gameState}
         setGameState={setGameState}
       />
-      <MathOptions options={gameState.mathOptions} />
+      <MathOptions
+        gameState={gameState}
+        setGameState={setGameState}
+      />
       <GameOptions />
     </View>
   )

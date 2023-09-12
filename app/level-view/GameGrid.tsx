@@ -5,7 +5,7 @@ import ChevronUp from "../../assets/icons/ChevronUp";
 
 export default function GameGrid({ gameState, setGameState }) {
   const selectCells = (dimension, index) => {
-    const tempGameState = { ...gameState }
+    let tempGameState = { ...gameState }
     // First, clear all selected cells.
     for (let row of tempGameState.gridLayout) {
       for (let cell of row) {

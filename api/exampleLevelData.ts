@@ -34,27 +34,27 @@ const levelData = {
     [
       {
         id: 1,
-        selected: true,
+        selected: false,
         value: null,
       },
       {
         id: 2,
-        selected: true,
+        selected: false,
         value: null,
       },
       {
         id: 3,
-        selected: true,
+        selected: false,
         value: null,
       },
       {
         id: 4,
-        selected: true,
+        selected: false,
         value: null,
       },
       {
         id: 5,
-        selected: true,
+        selected: false,
         value: null,
       }
     ],
@@ -66,7 +66,7 @@ const levelData = {
       },
       {
         id: 7,
-        selected: true,
+        selected: false,
         value: null,
       },
       {
@@ -76,7 +76,7 @@ const levelData = {
       },
       {
         id: 9,
-        selected: true,
+        selected: false,
         value: 14,
       },
       {
@@ -98,7 +98,7 @@ const levelData = {
       },
       {
         id: 13,
-        selected: true,
+        selected: false,
         value: null,
       },
       {
