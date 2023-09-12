@@ -14,7 +14,10 @@ export default function LevelView() {
     <View className="flex-1 justify-center items-center">
       <Text centered>{`Unisum\n${gameState.pack} #${gameState.level}`}</Text>
       <TargetNumber number={gameState.targetNumber} />
-      <GameGrid gridData={gameState.gridLayout} />
+      <GameGrid
+        gameState={gameState}
+        setGameState={setGameState}
+      />
       <MathOptions options={gameState.mathOptions} />
       <GameOptions />
     </View>
