@@ -4,8 +4,12 @@ import ChevronRight from "../../assets/icons/ChevronRight";
 import ChevronUp from "../../assets/icons/ChevronUp";
 
 export default function GameGrid({ gridData }) {
-  const Cell = ({ value }: { value: number }) => (
-    <View className="w-12 h-12 flex justify-center items-center border border-slate-300">
+  const Cell = ({ value, isSelected }: { value: number, isSelected: boolean }) => (
+    <View className={`w-12 h-12 flex justify-center items-center border 
+      ${isSelected
+        ? "bg-lavender-200 border-lavender-500"
+        : "bg-white border-slate-300"
+      }`}>
       <Text large>{value}</Text>
     </View>
   )
@@ -15,7 +19,7 @@ export default function GameGrid({ gridData }) {
       {gridData.map((row, index) => (
         <View className="flex-row" key={index}>
           {row.map(cell => (
-            <Cell key={cell.id} value={cell.value} />
+            <Cell key={cell.id} value={cell.value} isSelected={cell.selected} />
           ))}
         </View>
       ))}
