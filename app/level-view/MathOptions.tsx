@@ -4,6 +4,7 @@ import Text from "../../reusable-components/Text";
 export default function MathOptions({ gameState, setGameState }) {
   const applyMathOperation = (optionId, operation) => {
     let tempGameState = { ...gameState }
+    let isSomethingSelected = false
 
     for (let row of tempGameState.gridLayout) {
       for (let cell of row) {
@@ -11,9 +12,15 @@ export default function MathOptions({ gameState, setGameState }) {
           if (cell.value !== null) {
             cell.value = cell.value + operation
           }
+          isSomethingSelected = true
           cell.selected = false
         }
       }
+    }
+
+    // If nothing was selected, return before disabling the math option.
+    if (!isSomethingSelected) {
+      return setGameState(tempGameState)
     }
 
     for (let mathOption of tempGameState.mathOptions) {
@@ -27,7 +34,7 @@ export default function MathOptions({ gameState, setGameState }) {
 
   const Option = ({ id, value, isAvailable }: { id: number, value: number, isAvailable: boolean }) => (
     <Pressable
-      onPress={() => applyMathOperation(id, value)}>
+      onPress={() => isAvailable ? applyMathOperation(id, value) : null}>
       <View className={`m-2 py-1 px-2 rounded-lg flex justify-center items-center 
         ${isAvailable
           ? "bg-lavender-200 border border-lavender-400 shadow-sm shadow-slate-300"
