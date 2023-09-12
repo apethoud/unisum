@@ -32,6 +32,7 @@ export default function GameGrid({ gameState, setGameState }) {
     <View className={`w-12 h-12 flex justify-center items-center border 
       ${isSelected
         ? "bg-lavender-200 border-lavender-500"
+        : value === gameState.targetNumber ? "bg-kiwi-200 border-kiwi-600"
         : "bg-white border-slate-300"
       }`}>
       <Text large>{value}</Text>
