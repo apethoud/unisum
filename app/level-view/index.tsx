@@ -20,7 +20,7 @@ export default function LevelView() {
           }
         }
       }
-      return setIsGameWon(true)
+      return setTimeout(() => setIsGameWon(true), 1000)
     }
     validateGameBoard()
   }, [gameState])
