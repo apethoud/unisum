@@ -2,12 +2,26 @@
 module.exports = {
   content: [
     "./app/**/*.{js,jsx,ts,tsx}", 
+    "./assets/icons/**/*.{js,jsx,ts,tsx}",
     "./reusable-components/**/*.{js,jsx,ts,tsx}",
     "./views/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
+        'banana': {
+          '50': '#fcfaee',
+          '100': '#f7f2d1',
+          '200': '#ede39a',
+          '300': '#e4cf65',
+          '400': '#debd41',
+          '500': '#d5a22b',
+          '600': '#bc7f23',
+          '700': '#9d5f20',
+          '800': '#804b20',
+          '900': '#6a3e1d',
+          '950': '#3c200c',
+        },
         'kiwi': {
           '50': '#edfcef',
           '100': '#d1f7d5',

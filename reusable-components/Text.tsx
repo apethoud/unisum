@@ -5,25 +5,34 @@ export default function Text({
   children,
   bold,
   italic,
-  small,
+  enormous,
+  huge,
   large,
+  small,
   centered,
+  faded,
 }: {
   children: ReactNode,
   bold?: boolean,
   italic?: boolean,
-  small?: boolean,
+  enormous?: boolean,
+  huge?: boolean,
   large?: boolean,
+  small?: boolean,
   centered?: boolean,
+  faded?: boolean,
 }) {
   return (
     <RNText
       className={`
-        ${large ? "text-4xl"
+        ${enormous ? "text-5xl"
+          : huge ? "text-4xl"
+          : large ? "text-2xl"
           : small ? "text-base"
           : "text-lg"
-}
+        }
         ${centered ? "text-center" : "text-left"}
+        ${faded ? "text-slate-300" : "text-black"}
       `}
       style={{ fontFamily: bold ? "SourceCodeProBold" : italic ? "SourceCodeProItalic" : "SourceCodeProRegular" }}>
       {children}
