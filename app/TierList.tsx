@@ -24,8 +24,8 @@ export default function TierList() {
 
   const navigation = useRouter()
   
-  const navigateToLevel = () => {
-    navigation.push('level-view')
+  const navigateToLevelList = (tierId) => {
+    navigation.push({ pathname: 'level-list', params: { tier_id: tierId } })
   }
 
   return (
@@ -35,7 +35,7 @@ export default function TierList() {
           title={tier.name}
           subhead={`0 / X Completed`}
           color={tier.theme_color}
-          onPress={navigateToLevel}
+          onPress={() => navigateToLevelList(tier.id)}
           key={tier.id} />
       ))}
     </View>
