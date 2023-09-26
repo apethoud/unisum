@@ -13,7 +13,8 @@ export default function MenuCard({ title, subhead, color, onPress }: MenuCardPro
     <Pressable
       onPress={onPress}
       className={`w-full my-2 pt-4 px-4 pb-12 border rounded-xl shadow shadow-slate-300 
-        ${color === "kiwi" ? "border-kiwi-900 bg-kiwi-200"
+        ${color === "banana" ? "border-banana-900 bg-banana-200"
+          : color === "kiwi" ? "border-kiwi-900 bg-kiwi-200"
           : color === "ocean" ? "border-ocean-900 bg-ocean-200"
           : color === "lavender" ? "border-lavender-900 bg-lavender-200"
           : color === "orchid" ? "border-orchid-900 bg-orchid-200"
