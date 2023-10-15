@@ -31,10 +31,18 @@ export default function LevelList() {
   // }
 
   return (
-    <View className="w-full">
-      {levels && levels.map(level => (
-        <Text key={level.id}>Target Number: {level.target_number}</Text>
-      ))}
+    <View className="flex-1 justify-center items-center w-full">
+      <View className="flex-row">
+        {levels && levels.map(level => (
+          <View className="relative m-4 h-12 w-12 rounded-full bg-slate-200 border border-slate-600" key={level.id}>
+            <View className="absolute inset-0 w-full h-full">
+              <View className="flex-1 w-full h-full justify-center items-center">
+                <Text bold>{level.level_number}</Text>
+              </View>
+            </View>
+          </View>
+        ))}
+      </View>
     </View>
   )
 }
