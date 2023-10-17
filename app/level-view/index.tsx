@@ -40,6 +40,7 @@ export default function LevelView() {
           console.log("Error: ", error)
         }
       console.log("*** gameState: ", data[0])
+      createGameGrid(null)
       setGameState(data[0])
     }
     getLevel()
@@ -58,6 +59,21 @@ export default function LevelView() {
   //   }
   //   validateGameBoard()
   // }, [gameState])
+
+  const createGameGrid = populatedGridCells => {
+    let gameGrid = []
+    for (let i = 0; i < 5; i++) {
+      gameGrid.push([])
+      for (let j = 0; j < 5; j++) {
+        gameGrid[i].push({
+          is_selected: false,
+          value: null
+        })
+      }
+    }
+    console.log("generated gameGrid: ", gameGrid)
+    return gameGrid
+  }
 
   return (
     <View className="flex-1 justify-center items-center">
