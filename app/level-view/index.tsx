@@ -6,10 +6,29 @@ import GameGrid from "./GameGrid";
 import MathOptions from "./MathOptions";
 import GameOptions from "./GameOptions";
 import exampleLevelData from "../../api/exampleLevelData";
+import { useLocalSearchParams } from "expo-router";
+import { supabase } from "../../supabaseClient";
 
 export default function LevelView() {
   const [gameState, setGameState] = useState(exampleLevelData)
   const [isGameWon, setIsGameWon] = useState(false)
+
+  const { levelNumber } = useLocalSearchParams()
+
+  useEffect(() => {
+    async function getLevel() {
+      let { data, error } = await supabase
+        .from('levels')
+        .select(`*`)
+        .eq('level_number', levelNumber)
+        if (error) {
+          console.log("Error: ", error)
+        }
+      console.log("*** level: ", data)
+      // setLevels(data)
+    }
+    getLevel()
+  }, [])
 
   useEffect(() => {
     function validateGameBoard() {

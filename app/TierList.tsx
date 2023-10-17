@@ -25,7 +25,7 @@ export default function TierList() {
   const navigation = useRouter()
   
   const navigateToLevelList = (tierId) => {
-    navigation.push({ pathname: 'level-list', params: { tier_id: tierId } })
+    navigation.push({ pathname: 'level-list', params: { tierId: tierId } })
   }
 
   return (
