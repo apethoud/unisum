@@ -40,7 +40,7 @@ export default function LevelView() {
           console.log("Error: ", error)
         }
       console.log("*** gameState: ", data[0])
-      createGameGrid(null)
+      data[0].grid_cells = createGameGrid(data[0].grid_cells)
       setGameState(data[0])
     }
     getLevel()
@@ -62,6 +62,7 @@ export default function LevelView() {
 
   const createGameGrid = populatedGridCells => {
     let gameGrid = []
+    // Generate empty game grid
     for (let i = 0; i < 5; i++) {
       gameGrid.push([])
       for (let j = 0; j < 5; j++) {
@@ -72,6 +73,11 @@ export default function LevelView() {
       }
     }
     console.log("generated gameGrid: ", gameGrid)
+    for (let populatedGridCell of populatedGridCells) {
+      // START HERE: I've created an empty game grid. Now I need to iterate through the 
+      // populated grid cells from the db and add that data in the proper place within the
+      // empty game grid...
+    }
     return gameGrid
   }
 
