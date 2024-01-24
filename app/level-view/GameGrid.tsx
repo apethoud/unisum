@@ -4,21 +4,22 @@ import ChevronRight from "../../assets/icons/ChevronRight";
 import ChevronUp from "../../assets/icons/ChevronUp";
 
 export default function GameGrid({ gameState, setGameState }) {
+  console.log('gameState: ', gameState);
   const selectCells = (dimension, index) => {
     let tempGameState = { ...gameState }
     // First, clear all selected cells.
-    for (let row of tempGameState.gridLayout) {
+    for (let row of tempGameState.grid_cells) {
       for (let cell of row) {
         cell.selected = false
       }
     }
 
     if (dimension === "row") {
-      for (let cell of tempGameState.gridLayout[index]) {
+      for (let cell of tempGameState.grid_cells[index]) {
         cell.selected = !cell.selected
       }
     } else if (dimension === "column") {
-      for (let row of tempGameState.gridLayout) {
+      for (let row of tempGameState.grid_cells) {
         row[index].selected = !row[index].selected
       }
     } else {
@@ -41,10 +42,10 @@ export default function GameGrid({ gameState, setGameState }) {
 
   const Grid = () => (
     <View className="border border-slate-300">
-      {gameState.gridLayout.map((row, index) => (
-        <View className="flex-row" key={index}>
-          {row.map(cell => (
-            <Cell key={cell.id} value={cell.value} isSelected={cell.selected} />
+      {gameState.grid_cells.map((row, rowIndex) => (
+        <View className="flex-row" key={rowIndex}>
+          {row.map((cell, cellIndex) => (
+            <Cell key={cellIndex} value={cell.value} isSelected={cell.selected} />
           ))}
         </View>
       ))}
@@ -68,7 +69,7 @@ export default function GameGrid({ gameState, setGameState }) {
 
   const GridRowButtons = () => (
     <View className="flex-col pr-2">
-      {gameState.gridLayout.map((row, index) => (
+      {gameState.grid_cells.map((row, index) => (
         <GridButton dimension="row" key={index} index={index} />
       ))}
     </View>
@@ -76,7 +77,7 @@ export default function GameGrid({ gameState, setGameState }) {
 
   const GridColumnButtons = () => (
     <View className="flex-row justify-end pt-2">
-      {gameState.gridLayout[0].map((column, index) => (
+      {gameState.grid_cells[0].map((column, index) => (
         <GridButton dimension="column" key={index} index={index} />
       ))}
     </View>
