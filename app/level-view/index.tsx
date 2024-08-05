@@ -73,10 +73,14 @@ export default function LevelView() {
       }
     }
     console.log("generated gameGrid: ", gameGrid)
-    for (let populatedGridCell of populatedGridCells) {
+    for (let cell of populatedGridCells) {
+      console.log("cell: ", cell);
+      console.log(`Row ${Math.ceil(cell.grid_index / 5)}, Cell ${cell.grid_index % 5}`)
       // START HERE: I've created an empty game grid. Now I need to iterate through the 
       // populated grid cells from the db and add that data in the proper place within the
       // empty game grid...
+      // HERE'S WHERE I STOPPED: The cell value in line 78 works for the first four cells
+      // of a row, but not for the fifth because there's no remainder after dividing by 5.
     }
     return gameGrid
   }
