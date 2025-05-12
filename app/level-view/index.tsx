@@ -15,7 +15,7 @@ export default function LevelView() {
 
   const { levelNumber } = useLocalSearchParams()
 
-  useEffect(() => {
+  const getLevelData = () => {
     async function getLevel() {
       let { data, error } = await supabase
         .from('levels')
@@ -44,7 +44,9 @@ export default function LevelView() {
       setGameState(data[0])
     }
     getLevel()
-  }, [])
+  }
+
+  useEffect(getLevelData, [])
 
   // useEffect(() => {
   //   function validateGameBoard() {
