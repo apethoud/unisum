@@ -79,8 +79,21 @@ export default function LevelView() {
       // START HERE: I've created an empty game grid. Now I need to iterate through the 
       // populated grid cells from the db and add that data in the proper place within the
       // empty game grid...
-      // HERE'S WHERE I STOPPED: The cell value in line 78 works for the first four cells
-      // of a row, but not for the fifth because there's no remainder after dividing by 5.
+      // WHERE I AM NOW: How can I change the way the data is stored so that I have to do
+      // the least compute logic as possible on the frontend?
+      //
+      // gridIndex | gridIndex % 5
+      // 0 | 0
+      // 1 | 1
+      // 2 | 2
+      // 3 | 3
+      // 4 | 4
+      //
+      // 5 | 0
+      // 6 | 1
+      // 7 | 2
+      // 8 | 3
+      // 9 | 4
     }
     return gameGrid
   }
